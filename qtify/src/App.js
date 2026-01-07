@@ -25,39 +25,21 @@ function App() {
 
 
   //function to get top/new Album/Songs we will be using function from API file also
-  const generateTopAlbumSongs=async()=>{
-    try{
-      const res= await fetchTopAlbums();
-    setTopAlbumSongs(res);
-    }
-    catch(error){
-      console.log(error);
-      return null;
-    } 
-  }
+ const generateTopAlbumSongs = async () => {
+  const res = await fetchTopAlbums();
+  setTopAlbumSongs(res);
+};
 
-  const generateNewAlbumSongs=async()=>{
-    try{
-      const res= await fetchNewAlbums();
-    setNewAlbumSongs(res);
-    }
-    catch(error){
-      console.log(error);
-      return null;
-    } 
-  }
+const generateNewAlbumSongs = async () => {
+  const res = await fetchNewAlbums();
+  setNewAlbumSongs(res);
+};
 
-  const generateSongs=async()=>{
-    try{
-      console.log("generateSongs");
-      const res=await fetchSongs();
-      setSongsData(res);
-      setFilteredData(res);
-    }
-    catch(error){
-      return null;
-    }
-  }
+  const generateSongs = async () => {
+  const res = await fetchSongs();
+  setSongsData(res);
+  setFilteredData(res);
+};
 
 //function to generate filtered songs after selecting one tab
 const generateNewSongs=(index)=>{
