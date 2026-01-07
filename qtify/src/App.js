@@ -65,10 +65,9 @@ const generateNewSongs=(index)=>{
     key="blues";
   }
 
-  let newSongsArray=songsData.filter((song)=>{
-    console.log("key: ",key)
-    return(song.genre.key===key);
-  })
+  let newSongsArray = Array.isArray(songsData)
+  ? songsData.filter((song) => song.genre.key === key)
+  : [];
 
   console.log("generateNewSongs triggered and filtered this Data: ", newSongsArray)
   setFilteredData(newSongsArray);
